@@ -1,5 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
+import mongoose from "mongoose";
+import { DBinstance } from "./config/db";
 
 dotenv.config({ quiet: true });
 
@@ -8,8 +10,14 @@ const app = express();
 
 app.use(express.json()); // parse and work with json data
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+
+
+
+app.get("/", async (req, res) => {
+  const db = await DBinstance();
+  const user = db.collection("admins");
+  const data = await user.find().toArray();
+  res.status(201).json({ data })
 });
 
 
