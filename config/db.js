@@ -18,8 +18,6 @@ export const connectDB = async () => {
     process.exit(1);
   }
 };
-
-
 export const DBinstance = async () => {
   await client.connect();
   console.log("MongoDB connected");
