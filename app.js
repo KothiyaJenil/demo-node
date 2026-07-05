@@ -1,14 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
-import { DBinstance } from "./config/db";
+import { DBinstance } from "./config/db.js";
 
 
 export const app = express();
 
-
 app.use(express.json()); // parse and work with json data
-
-
 
 
 app.get("/", async (req, res) => {
