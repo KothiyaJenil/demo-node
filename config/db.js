@@ -22,7 +22,7 @@ export const connectDB = async () => {
 
 export const DBinstance = async () => {
   await client.connect();
-  log("MongoDB connected");
+  console.log("MongoDB connected");
   const db = client.db("CodeAnonymous");
   return db;
 };
