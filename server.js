@@ -11,7 +11,7 @@ dotenv.config({ quiet: true });
 const app = express();
 app.use(express.json()) // parse and work with json data
 app.use(morgan('dev')); // HTTP req log 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 
 
